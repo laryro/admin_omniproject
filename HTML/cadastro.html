@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title>War Online - Admin</title>
+		<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/bootstrap-theme.min.css" rel="stylesheet">
+		<link href="css/main.css" rel="stylesheet">
+	</head>
+	<body class="cadastro-wrapper">
+		<header>
+			<!-- Fixed navbar -->
+			<nav class="navbar navbar-default navbar-fixed-top">
+				<div class="container">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="lista.html">War Online - Admin | Objetivos</a>
+					</div>
+					<div id="navbar" class="navbar-collapse collapse">
+						<ul class="nav navbar-nav  navbar-right">
+							<li><a href="lista.html">Listagem de Objetivos</a></li>
+							<li class="active"><a href="cadastro.html">Cadastro de Objetivos</a></li>
+							<li><a href="index.html">Sair</a></li>
+						</ul>
+					</div><!--/.nav-collapse -->
+				</div>
+			</nav>
+		</header><!-- /header -->
+
+		<main class="container">
+			<h1>Objetivos</h1>
+			<h2>Cadastro</h2>
+
+
+			<form action="lista.html" method="POST">
+				<div style="display:none" id="login-alert" class="alert alert-danger col-sm-12">
+				<!-- MENSAGEM DE ERRRO -->
+				</div>
+
+			<div class="form-group">
+				<label for="descricao">Descrição</label>
+				<textarea rows="3" class="form-control" id="descricao" name="objetivo.descricao" required></textarea>
+			</div>
+
+			<div class="row">
+
+				<div class="col-sm-6 form-group">
+					<label for="pais">Pais</label>
+					<select name="objetivo.criterio1" id="pais" required  class="form-control">
+						<c:forEach items="${criterioList}" var="criterio">
+							<!-- <option value="${criterio}">${criterio.valor}</option> -->
+							<option>Selecione um pais...</option>
+							<option>Brasil</option>
+							<option>Chile</option>
+						</c:forEach>
+					</select>
+				</div>
+
+				<div class="col-sm-6 form-group">
+					<label for="tropas">Quantidade mínima de Tropas</label>
+					<input type="number" id="tropas" class="form-control" min="1" name="altura"  />
+				</div>
+
+
+			</div>
+
+			<div class="form-group">
+				<label for="criterio1">Critério</label>
+				<select id="criterio1" class="form-control" name="objetivo.criterio1" title="${criterioList}" required>
+					<c:forEach items="${produtosList}" var="criterio">
+
+						<!-- <option value="${criterio}">${criterio.valor}</option> -->
+						<option>Selecione o tipo de critério</option>
+						<option value="and">E</option>
+						<option value="or">OU</option>
+					</c:forEach>
+				</select>
+			</div>
+
+			<div>
+				<label class="control-label">Destruir exécito cor</label>
+				<section>
+					<c:forEach var="cor" items="${corList}" >
+
+
+					<!-- <div class="checkbox">
+					  <label>
+					    <input name="cores" type="checkbox" value="${cor}">
+					    ${cor.valor}
+					  </label>
+					</div> -->
+
+					<div class="checkbox">
+					  <label>
+					    <input name="cores" type="checkbox" value="verde">
+					    Verde
+					  </label>
+					</div>
+					<div class="checkbox">
+					  <label>
+					    <input name="cores" type="checkbox" value="Vermelho">
+					    Vermelho
+					  </label>
+					</div>
+					<div class="checkbox">
+					  <label>
+					    <input name="cores" type="checkbox" value="Azul">
+					    Azul
+					  </label>
+					</div>
+
+	            	</c:forEach>
+				</section>
+			</div>
+
+			<div class="form-group">
+				<label for="criterio2">Critério</label>
+				<select id="criterio2" class="form-control" name="objetivo.criterio2" title="${criterioList}" required>
+					<c:forEach items="${produtosList}" var="criterio">
+						<!-- <option value="${criterio}">${criterio.valor}</option> -->
+						<option>Selecione o tipo de critério</option>
+						<option value="and">E</option>
+						<option value="or">OU</option>
+					</c:forEach>
+				</select>
+			</div>
+
+			<div class="form-group">
+					<label for="territorios">Quantidade de territórios aleatórios</label>
+					<input type="number" id="territorios" class="form-control" min="1" name="altura"  />
+				</div>
+			<div class="text-right">
+				<button type="submit" class="btn btn-success"><i class="glyphicon glyphicon-plus"></i> Cadastrar Objetivo</button>
+			</div>
+			</form>
+		</main>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+	</body>
+</html>

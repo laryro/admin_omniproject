@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title>War Online - Admin</title>
+		<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/bootstrap-theme.min.css" rel="stylesheet">
+		<link href="css/main.css" rel="stylesheet">
+	</head>
+	<body class="login-wrapper">
+		<header>
+
+			<!-- Fixed navbar -->
+			<nav class="navbar navbar-default navbar-fixed-top">
+				<div class="container">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="#">War Online - Admin</a>
+					</div>
+					<div id="navbar" class="navbar-collapse collapse">
+
+					</div><!--/.nav-collapse -->
+				</div>
+			</nav>
+
+		</header><!-- /header -->
+
+		<main class="container">
+
+			<div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+				<div class="panel panel-info" >
+					<div class="panel-heading">
+						<h1 class="panel-title">Entrar</h1>
+					</div>
+
+					<div class="panel-body">
+
+						<div style="display:none" id="login-alert" class="alert alert-danger col-sm-12">
+							<!-- MENSAGEM DE ERRRO -->
+						</div>
+
+						<form action="lista.html" method="POST" id="loginform" class="" role="form">
+
+							<div class="form-group">
+								<label for="username">Usuário</label>
+								<div style="margin-bottom: 25px" class="input-group">
+									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+									<input id="username" type="text" required class="form-control" name="username" >
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label for="password">Senha</label>
+								<div style="margin-bottom: 25px" class="input-group">
+									<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+									<input id="password" type="password" required class="form-control" name="password" >
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="text-right">
+									<button class="btn btn-success" type="submit"><i class="glyphicon glyphicon-send"></i> Entrar </button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</main>
+
+
+
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+	</body>
+</html>
